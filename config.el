@@ -120,3 +120,29 @@
 (with-eval-after-load 'dap-mode
   (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
   (dap-auto-configure-mode +1))
+
+(evil-define-operator rust-format-expression (beg end)
+  "Call rustfmt on an expression."
+  (let ((n (/ (current-indentation) 4)))
+    (forward-line 0)
+    (let ((start (point)))
+      (dotimes (_ n) (insert "fn f(){"))
+      (insert "\n")
+      (evil-visual-goto-end)
+      (forward-line 1)
+      (dotimes (_ n) (insert "}"))
+      (insert "\n")
+      (+format-region
+       start (point)
+       (lambda ()
+         (forward-line (- n))
+         (dotimes (_ n)
+           (delete-line)
+           )
+         (goto-char start)
+         (dotimes (_ n)
+           (delete-line)
+           )
+         ))
+      )
+    ))
