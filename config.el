@@ -146,3 +146,11 @@
          ))
       )
     ))
+
+(defun insert-html-variable ()
+  "Insert a variable inside an HTML tag."
+  (interactive)
+  (let ((name (read-from-minibuffer "<")))
+    (insert "<var>" name "</var>")))
+
+(map! "C-," #'insert-html-variable)
