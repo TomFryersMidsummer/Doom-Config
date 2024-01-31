@@ -157,3 +157,6 @@
 
 (setq code-review-auth-login-marker 'forge)
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+(after! apheleia
+  (setf (alist-get 'typescript-mode apheleia-mode-alist) '(js-beautify))
+  (setf (alist-get 'rjsx-mode apheleia-mode-alist) '(js-beautify)))
