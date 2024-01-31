@@ -154,3 +154,5 @@
     (insert "<var>" name "</var>")))
 
 (map! "C-," #'insert-html-variable)
+
+(setq code-review-auth-login-marker 'forge)
