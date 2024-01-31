@@ -156,3 +156,4 @@
 (map! "C-," #'insert-html-variable)
 
 (setq code-review-auth-login-marker 'forge)
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
