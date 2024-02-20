@@ -50,5 +50,3 @@
 ;; (unpin! t)
 
 (package! doom-snippets :ignore t)
-
-(package! tide :recipe (:host github :repo "TomFryersMidsummer/tide"))
