@@ -161,3 +161,5 @@
   (setf (alist-get 'typescript-mode apheleia-mode-alist) '(js-beautify))
   (setf (alist-get 'rjsx-mode apheleia-mode-alist) '(js-beautify)))
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
+(after! lsp-mode
+  (setq lsp-pylsp-plugin-ruff-enabled t))
