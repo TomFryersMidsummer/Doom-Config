@@ -81,7 +81,9 @@
 (setq rustic-lsp-server 'rust-analyzer)
 (setq calc-angle-mode 'rad
       calc-symbolic-mode t)
-(setq company-idle-delay nil)
+(after! corfu
+  (setq corfu-auto nil)
+  (setq corfu-preview-current nil))
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq sentence-end-double-space nil)
