@@ -140,15 +140,10 @@
        (lambda ()
          (forward-line (- n))
          (dotimes (_ n)
-           (delete-line)
-           )
+           (delete-line))
          (goto-char start)
          (dotimes (_ n)
-           (delete-line)
-           )
-         ))
-      )
-    ))
+           (delete-line)))))))
 
 (defun insert-html-variable ()
   "Insert a variable inside an HTML tag."
