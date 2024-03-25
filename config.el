@@ -83,7 +83,9 @@
       calc-symbolic-mode t)
 (after! corfu
   (setq corfu-auto nil)
-  (setq corfu-preview-current nil))
+  (setq corfu-preview-current nil)
+  (setq tab-always-indent nil))
+
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
 (setq sentence-end-double-space nil)
