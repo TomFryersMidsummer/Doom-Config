@@ -96,6 +96,7 @@
 (setq auth-sources '("~/.authinfo"))
 (setq +format-on-save-disabled-modes '(emacs-lisp-mode sql-mode tex-mode latex-mode org-msg-edit-mode rjsx-mode))
 (use-package dap-mode
+  :defer t
   :ensure
   :config
   (dap-ui-mode)
