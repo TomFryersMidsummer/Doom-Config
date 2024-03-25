@@ -78,7 +78,6 @@
 (after! doom-modeline
   (advice-add #'doom-modeline-segment--modals :override #'ignore))
 
-(setq rustic-lsp-server 'rust-analyzer)
 (setq calc-angle-mode 'rad
       calc-symbolic-mode t)
 (after! corfu
