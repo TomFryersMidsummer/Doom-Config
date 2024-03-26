@@ -163,3 +163,5 @@
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
 (after! lsp-mode
   (setq lsp-pylsp-plugin-ruff-enabled t))
+(undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
+    :around '(evil-fill evil-fill-and-move))
