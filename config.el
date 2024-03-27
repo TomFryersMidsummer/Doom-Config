@@ -94,7 +94,8 @@
   (setq fill-column (min (+ (current-indentation) 80) 100))
   (evil-fill beg end))
 (setq auth-sources '("~/.authinfo"))
-(setq +format-on-save-disabled-modes '(emacs-lisp-mode sql-mode tex-mode latex-mode org-msg-edit-mode rjsx-mode))
+(setq +format-on-save-disabled-modes
+      '(emacs-lisp-mode sql-mode tex-mode latex-mode org-msg-edit-mode rjsx-mode))
 (use-package dap-mode
   :defer t
   :config
@@ -107,21 +108,23 @@
   ;; installs .extension/vscode
   ;; (dap-gdb-lldb-setup)
   (dap-cpptools-setup)
-  (dap-register-debug-template "Rust::CppTools Run Configuration"
-                               (list :type "cppdbg"
-                                     :request "launch"
-                                     :name "Rust::Run"
-                                     :MIMode "gdb"
-                                     :miDebuggerPath "rust-gdb"
-                                     :environment []
-                                     :program "${workspaceFolder}/target/debug/REPLACETHIS"
-                                     :cwd "${workspaceFolder}"
-                                     :console "external"
-                                     :dap-compilation "cargo build"
-                                     :dap-compilation-dir "${workspaceFolder}")))
+  (dap-register-debug-template
+   "Rust::CppTools Run Configuration"
+   (list :type "cppdbg"
+         :request "launch"
+         :name "Rust::Run"
+         :MIMode "gdb"
+         :miDebuggerPath "rust-gdb"
+         :environment []
+         :program "${workspaceFolder}/target/debug/REPLACETHIS"
+         :cwd "${workspaceFolder}"
+         :console "external"
+         :dap-compilation "cargo build"
+         :dap-compilation-dir "${workspaceFolder}")))
 
 (with-eval-after-load 'dap-mode
-  (setq dap-default-terminal-kind "integrated") ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+  ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
+  (setq dap-default-terminal-kind "integrated")
   (dap-auto-configure-mode +1))
 
 (evil-define-operator rust-format-expression (beg end)
@@ -164,4 +167,4 @@
 (after! lsp-mode
   (setq lsp-pylsp-plugin-ruff-enabled t))
 (undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
-    :around '(evil-fill evil-fill-and-move))
+  :around '(evil-fill evil-fill-and-move))
