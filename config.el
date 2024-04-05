@@ -164,7 +164,7 @@
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff))
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff)))
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
-(after! lsp-mode
-  (setq lsp-pylsp-plugin-ruff-enabled t))
+(setq lsp-pylsp-plugins-ruff-enabled t
+      lsp-pylsp-plugins-mypy-enabled t)
 (undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
   :around '(evil-fill evil-fill-and-move))
