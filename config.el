@@ -80,22 +80,28 @@
 
 (setq calc-angle-mode 'rad
       calc-symbolic-mode t)
+
 (after! corfu
   (setq corfu-auto nil)
   (setq corfu-preview-current nil)
   (setq tab-always-indent nil))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
+
 (setq lsp-rust-analyzer-cargo-watch-command "clippy")
+
 (setq sentence-end-double-space nil)
 
 (evil-define-operator rust-wrap (beg end)
   "Wrap, taking indentation into account."
   (setq fill-column (min (+ (current-indentation) 80) 100))
   (evil-fill beg end))
+
 (setq auth-sources '("~/.authinfo"))
+
 (setq +format-on-save-disabled-modes
       '(emacs-lisp-mode sql-mode tex-mode latex-mode org-msg-edit-mode rjsx-mode))
+
 (use-package dap-mode
   :defer t
   :config
@@ -157,14 +163,19 @@
 (map! "C-," #'insert-html-variable)
 
 (setq code-review-auth-login-marker 'forge)
+
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+
 (after! apheleia
   (setf (alist-get 'typescript-mode apheleia-mode-alist) '(js-beautify))
   (setf (alist-get 'rjsx-mode apheleia-mode-alist) '(js-beautify))
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff))
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff)))
+
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
+
 (setq lsp-pylsp-plugins-ruff-enabled t
       lsp-pylsp-plugins-mypy-enabled t)
+
 (undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
   :around '(evil-fill evil-fill-and-move))
