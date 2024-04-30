@@ -179,3 +179,6 @@
 
 (undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
   :around '(evil-fill evil-fill-and-move))
+
+(after! lsp-mode
+  (setq lsp-lens-enable nil))
