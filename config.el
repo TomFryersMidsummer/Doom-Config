@@ -94,8 +94,10 @@
 
 (evil-define-operator rust-wrap (beg end)
   "Wrap, taking indentation into account."
-  (setq fill-column (min (+ (current-indentation) 80) 100))
-  (evil-fill beg end))
+  (let ((old-fill-column fill-column))
+    (setq fill-column (min (+ (current-indentation) 80) 100))
+    (evil-fill beg end)
+    (setq fill-column old-fill-column)))
 
 (setq auth-sources '("~/.authinfo"))
 
