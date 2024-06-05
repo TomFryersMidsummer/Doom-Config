@@ -182,3 +182,6 @@
 
 (after! lsp-mode
   (setq lsp-lens-enable nil))
+
+(after! rustic
+  (map! :map rustic-mode-map "<normal-state> g w" #'rust-wrap))
