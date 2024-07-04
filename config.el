@@ -76,7 +76,7 @@
 ;; they are implemented.
 
 (after! doom-modeline
-  (advice-add #'doom-modeline-segment--modals :override #'ignore))
+  (setq doom-modeline-modal nil))
 
 (setq calc-angle-mode 'rad
       calc-symbolic-mode t)
