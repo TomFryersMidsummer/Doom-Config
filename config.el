@@ -77,7 +77,8 @@
 
 (after! doom-modeline
   (setq doom-modeline-check-simple-format t)
-  (setq doom-modeline-modal nil))
+  (setq doom-modeline-modal nil)
+  (setq doom-modeline-percent-position '(-3 "%o")))
 
 (setq calc-angle-mode 'rad
       calc-symbolic-mode t)
