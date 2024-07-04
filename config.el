@@ -76,6 +76,7 @@
 ;; they are implemented.
 
 (after! doom-modeline
+  (setq doom-modeline-check-simple-format t)
   (setq doom-modeline-modal nil))
 
 (setq calc-angle-mode 'rad
