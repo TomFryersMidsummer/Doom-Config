@@ -185,6 +185,8 @@
   :around '(evil-fill evil-fill-and-move))
 
 (after! lsp-mode
+  (setq lsp-rust-analyzer-completion-postfix-enable nil)
+  (setq lsp-rust-analyzer-completion-add-call-argument-snippets nil)
   (setq lsp-lens-enable nil))
 
 (after! rustic
