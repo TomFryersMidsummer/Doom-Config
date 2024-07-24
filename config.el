@@ -191,3 +191,6 @@
 
 (after! rustic
   (map! :map rustic-mode-map "<normal-state> g w" #'rust-wrap))
+
+(after! code-review
+  (setq code-review-lgtm-message "This all looks OK."))
