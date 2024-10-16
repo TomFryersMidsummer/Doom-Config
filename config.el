@@ -194,3 +194,5 @@
 
 (after! code-review
   (setq code-review-lgtm-message "This all looks OK."))
+
+(setq ispell-dictionary "en_GB")
