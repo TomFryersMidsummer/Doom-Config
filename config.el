@@ -171,8 +171,6 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
 (after! apheleia
-  (setf (alist-get 'typescript-mode apheleia-mode-alist) '(js-beautify))
-  (setf (alist-get 'rjsx-mode apheleia-mode-alist) '(js-beautify))
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff))
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff)))
 
