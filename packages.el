@@ -50,3 +50,4 @@
 ;; (unpin! t)
 
 (package! doom-snippets :ignore t)
+(package! pr-review)
