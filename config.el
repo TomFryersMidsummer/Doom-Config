@@ -201,3 +201,4 @@
 (evil-ex-define-cmd "prn" #'pr-review-notification)
 (add-to-list 'browse-url-default-handlers
              '(pr-review-url-parse . pr-review-open-url))
+(add-to-list 'auto-mode-alist '("/Cargo\\.lock\\'" . conf-toml-mode))
