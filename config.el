@@ -188,7 +188,9 @@
   (setq lsp-lens-enable nil))
 
 (after! rustic
-  (map! :map rustic-mode-map "<normal-state> g w" #'rust-wrap))
+  (map! :map rustic-mode-map "<normal-state> g w" #'rust-wrap)
+  (setq rustic-default-clippy-arguments "--all-targets --all-features")
+  (setq rustic-cargo-check-arguments "--all-targets --all-features"))
 
 (after! code-review
   (setq code-review-lgtm-message "This all looks OK."))
