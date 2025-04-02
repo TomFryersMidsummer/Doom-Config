@@ -80,6 +80,8 @@
 (after! doom-modeline
   (setq doom-modeline-check-simple-format t)
   (setq doom-modeline-modal nil)
+  (setq doom-modeline-battery nil)
+  (setq lsp-modeline-code-actions-enable nil)
   (setq doom-modeline-percent-position '(-3 "%o")))
 
 (setq calc-angle-mode 'rad
