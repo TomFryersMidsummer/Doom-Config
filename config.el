@@ -75,6 +75,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(setq evil-escape-key-sequence "jk")
+
 (after! doom-modeline
   (setq doom-modeline-check-simple-format t)
   (setq doom-modeline-modal nil)
