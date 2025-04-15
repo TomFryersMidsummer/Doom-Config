@@ -174,6 +174,7 @@
 (setq code-review-auth-login-marker 'forge)
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (after! apheleia
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff))
