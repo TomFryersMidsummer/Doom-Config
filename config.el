@@ -111,37 +111,6 @@
       '(emacs-lisp-mode sql-mode tex-mode latex-mode
         org-msg-edit-mode rjsx-mode typescript-mode json-mode))
 
-(use-package dap-mode
-  :defer t
-  :config
-  (dap-ui-mode)
-  (dap-ui-controls-mode 1)
-
-  ;; (require 'dap-lldb)
-  (require 'dap-cpptools)
-  ;; (require 'dap-gdb-lldb)
-  ;; installs .extension/vscode
-  ;; (dap-gdb-lldb-setup)
-  (dap-cpptools-setup)
-  (dap-register-debug-template
-   "Rust::CppTools Run Configuration"
-   (list :type "cppdbg"
-         :request "launch"
-         :name "Rust::Run"
-         :MIMode "gdb"
-         :miDebuggerPath "rust-gdb"
-         :environment []
-         :program "${workspaceFolder}/target/debug/REPLACETHIS"
-         :cwd "${workspaceFolder}"
-         :console "external"
-         :dap-compilation "cargo build"
-         :dap-compilation-dir "${workspaceFolder}")))
-
-(with-eval-after-load 'dap-mode
-  ;; Make sure that terminal programs open a term for I/O in an Emacs buffer
-  (setq dap-default-terminal-kind "integrated")
-  (dap-auto-configure-mode +1))
-
 (evil-define-operator rust-format-expression (beg end)
   "Call rustfmt on an expression."
   (let ((n (/ (current-indentation) 4)))
