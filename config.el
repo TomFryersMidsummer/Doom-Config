@@ -180,3 +180,5 @@
              '(pr-review-url-parse . pr-review-open-url))
 (add-to-list 'auto-mode-alist
              '("/\\(?:Cargo\\|uv\\)\\.lock\\'" . conf-toml-mode))
+
+(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
