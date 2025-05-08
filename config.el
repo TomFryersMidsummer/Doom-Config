@@ -182,3 +182,5 @@
              '("/\\(?:Cargo\\|uv\\)\\.lock\\'" . conf-toml-mode))
 
 (remove-hook 'doom-first-input-hook #'evil-snipe-mode)
+
+(setq! evil-want-Y-yank-to-eol nil)
