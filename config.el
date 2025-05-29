@@ -98,12 +98,20 @@
 
 (setq sentence-end-double-space nil)
 
-(evil-define-operator rust-wrap (beg end)
-  "Wrap, taking indentation into account."
+(defun wrap-to (beg end width)
+  "Wrap a block of text to a given width."
   (let ((old-fill-column fill-column))
-    (setq fill-column (min (+ (current-indentation) 80) 100))
+    (setq fill-column width)
     (evil-fill beg end)
     (setq fill-column old-fill-column)))
+
+(evil-define-operator rust-wrap (beg end)
+  "Wrap Rust code, taking indentation into account."
+  (wrap-to beg end (min (+ (current-indentation) 80) 100)))
+
+(evil-define-operator python-wrap (beg end)
+  "Wrap long blocks of text to 72 characters, as per PEP 8."
+  (wrap-to beg end 72))
 
 (setq auth-sources '("~/.authinfo"))
 
@@ -161,6 +169,8 @@
   (setq lsp-rust-analyzer-completion-postfix-enable nil)
   (setq lsp-rust-analyzer-completion-add-call-argument-snippets nil)
   (setq lsp-lens-enable nil))
+
+(map! :map python-mode-map "<normal-state> g w" #'python-wrap)
 
 (after! rustic
   (map! :map rustic-mode-map "<normal-state> g w" #'rust-wrap)
