@@ -168,7 +168,8 @@
 (after! lsp-mode
   (setq lsp-rust-analyzer-completion-postfix-enable nil)
   (setq lsp-rust-analyzer-completion-add-call-argument-snippets nil)
-  (setq lsp-lens-enable nil))
+  (setq lsp-lens-enable nil)
+  (setq lsp-auto-execute-action nil))
 
 (map! :map python-mode-map "<normal-state> g w" #'python-wrap)
 
