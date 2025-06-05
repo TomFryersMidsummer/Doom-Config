@@ -167,6 +167,8 @@
   (setq lsp-rust-analyzer-completion-postfix-enable nil)
   (setq lsp-rust-analyzer-completion-add-call-argument-snippets nil)
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
+  (setq lsp-rust-analyzer-import-prefix "self")
+  (setq lsp-rust-analyzer-import-granularity "module")
   (setq lsp-lens-enable nil)
   (setq lsp-auto-execute-action nil))
 
