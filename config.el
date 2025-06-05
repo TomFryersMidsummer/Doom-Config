@@ -94,8 +94,6 @@
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
 
-(setq lsp-rust-analyzer-cargo-watch-command "clippy")
-
 (setq sentence-end-double-space nil)
 
 (defun wrap-to (beg end width)
@@ -168,6 +166,7 @@
 (after! lsp-mode
   (setq lsp-rust-analyzer-completion-postfix-enable nil)
   (setq lsp-rust-analyzer-completion-add-call-argument-snippets nil)
+  (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   (setq lsp-lens-enable nil)
   (setq lsp-auto-execute-action nil))
 
