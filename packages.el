@@ -51,3 +51,4 @@
 
 (package! doom-snippets :ignore t)
 (package! pr-review)
+(package! pet)

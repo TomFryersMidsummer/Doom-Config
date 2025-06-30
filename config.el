@@ -197,3 +197,5 @@
 (remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 
 (setq! evil-want-Y-yank-to-eol nil)
+
+(add-hook 'python-base-mode-hook 'pet-mode -10)
