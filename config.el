@@ -201,6 +201,3 @@
 (setq! evil-want-Y-yank-to-eol nil)
 
 (add-hook 'python-base-mode-hook 'pet-mode -10)
-
-(add-hook! '(prog-mode-hook conf-mode-hook) #'rainbow-delimiters-mode)
-(setq rainbow-delimiters-max-face-count 4)
