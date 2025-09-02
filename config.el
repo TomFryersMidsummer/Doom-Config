@@ -158,6 +158,8 @@
   (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff))
   (setf (alist-get 'php-mode apheleia-mode-alist) '(php-cs-fixer)))
 
+(map! :leader :desc "Save buffer" "f s" #'save-buffer)
+
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
 
 (setq lsp-pylsp-plugins-ruff-enabled t
