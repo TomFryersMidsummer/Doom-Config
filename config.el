@@ -115,7 +115,8 @@
 
 (setq +format-on-save-disabled-modes
       '(emacs-lisp-mode sql-mode tex-mode latex-mode
-        org-msg-edit-mode rjsx-mode typescript-mode json-mode))
+        org-msg-edit-mode
+        js-mode js-ts-mode typescript-mode typescript-ts-mode json-mode))
 
 (evil-define-operator rust-format-expression (beg end)
   "Call rustfmt on an expression."
