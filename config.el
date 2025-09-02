@@ -152,8 +152,11 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
 (after! apheleia
+  (push '(php-cs-fixer . ("php-auto-formatter" filepath))
+        apheleia-formatters)
   (setf (alist-get 'python-mode apheleia-mode-alist) '(ruff))
-  (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff)))
+  (setf (alist-get 'python-ts-mode apheleia-mode-alist) '(ruff))
+  (setf (alist-get 'php-mode apheleia-mode-alist) '(php-cs-fixer)))
 
 (setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
 
