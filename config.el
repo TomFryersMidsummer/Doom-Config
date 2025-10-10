@@ -207,4 +207,19 @@
 
 (setq! evil-want-Y-yank-to-eol nil)
 
+(after! spell-fu
+  (defun replace-quotes (string)
+    "Replace typographic quotes with straight ones."
+    (replace-regexp-in-string "’" "'" string))
+  (defun send-string-quotes-advice (args)
+    "Replace typographic quotes with straight ones before sending them."
+    (list (replace-quotes (car args))))
+  (defun check-word-quotes-advice (args)
+    "Replace typographic quotes with straight ones before checking things."
+    (apply (lambda (pos-beg pos-end word)
+             (list pos-beg pos-end (replace-quotes word)))
+           args))
+  (advice-add 'ispell-send-string :filter-args #'send-string-quotes-advice)
+  (advice-add 'spell-fu-check-word :filter-args #'check-word-quotes-advice))
+
 (add-hook 'python-base-mode-hook 'pet-mode -10)
