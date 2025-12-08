@@ -224,3 +224,6 @@
   (advice-add 'spell-fu-check-word :filter-args #'check-word-quotes-advice))
 
 (add-hook 'python-base-mode-hook 'pet-mode -10)
+
+(after! magit
+  (setq magit-branch-adjust-remote-upstream-alist '(("origin/main" . ("main")))))
