@@ -160,8 +160,6 @@
 
 (map! :leader :desc "Save buffer" "f s" #'save-buffer)
 
-(setq treesit-extra-load-path '("~/tree-sitter-module/dist"))
-
 (setq lsp-pylsp-plugins-ruff-enabled t
       lsp-pylsp-plugins-mypy-enabled t)
 
