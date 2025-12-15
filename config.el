@@ -172,10 +172,10 @@
   (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   (setq lsp-rust-analyzer-import-prefix "self")
   (setq lsp-rust-analyzer-import-granularity "module")
+  (setq lsp-rust-analyzer-completion-term-search-enable t)
+  (setq lsp-rust-analyzer-assist-prefer-self t)
   (lsp-register-custom-settings
-   '(("rust-analyzer.completion.termSearch.enable" t t)
-     ("rust-analyzer.assist.preferSelf" t t)
-     ("typescript.preferences.preferTypeOnlyAutoImports" t t)))
+   '(("typescript.preferences.preferTypeOnlyAutoImports" t t)))
   (setq lsp-lens-enable nil)
   (setq lsp-auto-execute-action nil))
 
