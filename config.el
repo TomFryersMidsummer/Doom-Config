@@ -160,9 +160,6 @@
 
 (map! :leader :desc "Save buffer" "f s" #'save-buffer)
 
-(setq lsp-pylsp-plugins-ruff-enabled t
-      lsp-pylsp-plugins-mypy-enabled t)
-
 (undefadvice! +evil--no-squeeze-on-fill-a (fn &rest args)
   :around '(evil-fill evil-fill-and-move))
 
